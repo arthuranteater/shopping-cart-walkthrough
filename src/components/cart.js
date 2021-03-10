@@ -11,6 +11,10 @@ const Cart = ({ items }) => (
           <div className="col-md-2">Price</div>
           <div className="col-md-2">Quantity</div>
         </div>
+        {console.log("items", items)}
+        {items.map((item) => (
+          <Item key={item.id} item={item} />
+        ))}
       </div>
     </div>
   </div>

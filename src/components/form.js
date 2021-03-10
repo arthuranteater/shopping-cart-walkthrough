@@ -10,6 +10,7 @@ export default class Form extends React.Component {
   onSubmit = (e) => {
     e.preventDefault();
     console.log(this.state);
+    this.props.addToCart(this.state);
   };
 
   inputChange = (e) => {

@@ -5,6 +5,7 @@ import Footer from "./components/footer";
 import Cart from "./components/cart";
 import Form from "./components/form";
 import { Component } from "react";
+import Layout from "./components/layout";
 
 class App extends Component {
   state = {
@@ -90,17 +91,19 @@ class App extends Component {
 
     return (
       <div className="App">
-        <Header />
-        <br></br>
-        <Cart items={this.state.cartItems} />
-        <br></br>
-        <div className="container">
-          <button onClick={this.sumTotal}>{toggle}</button>
-          {sum}
-        </div>
-        <br></br>
-        <Form products={this.state.products} addToCart={this.addToCart} />
-        <Footer copyright={year} />
+        
+        <Layout>
+          <br></br>
+          <Cart items={this.state.cartItems} />
+          <br></br>
+          <div className="container">
+            <button onClick={this.sumTotal}>{toggle}</button>
+            {sum}
+          </div>
+          <br></br>
+          <Form products={this.state.products} addToCart={this.addToCart} />
+        </Layout>
+        
       </div>
     );
   }
